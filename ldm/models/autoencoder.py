@@ -332,7 +332,7 @@ class AutoencoderKL(pl.LightningModule):
         dec = self.decoder(z)
         return dec
 
-    def forward(self, input, sample_posterior=True):
+    def forward(self, input, sample_posterior=False):
         posterior = self.encode(input)
         if sample_posterior:
             z = posterior.sample()
